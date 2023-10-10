@@ -17,10 +17,8 @@ async def start_msg(client, message):
     await message.reply(f'''<b><i>Js Bypass💫</i></b>
     
     <i>Iam Js Bypasser Shortener Links Scrape links Soon More..... </i>
-    
-    <i><b>Bot Started {convert_time(time() - BOT_START)} ago...</b></i>
 
-🛃 <b>Join 🤍 :</b> @Xcalibergroup <i>(Bypass Topic)</i>''',
+🤍 <b>JOIN:</b> @Xcalibergroup <i>(Bypass Topic)</i>''',
         quote=True,
         reply_markup=InlineKeyboardMarkup([
             [InlineKeyboardButton('🔥Owner', url='https://t.me/J_S_X_20')]
@@ -38,7 +36,7 @@ async def bypass_check(client, message):
         txt = message.text
         entities = message.entities
     else:
-        return await message.reply('<i>No Link Provided!</i>')
+        return await message.reply('<i>Link Not Provided!</i>')
     
     wait_msg = await message.reply("<i>Bypassing...</i>")
     start = time()
@@ -68,7 +66,7 @@ async def bypass_check(client, message):
         elif isinstance(result, list):
             bp_link, ui = "", "┖"
             for ind, lplink in reversed(list(enumerate(result, start=1))):
-                bp_link = f"\n{ui} <b>{ind}x Bypass Link:</b> {lplink}" + bp_link
+                bp_link = f"\n{ui} <b>{ind}x Bypass ➠Link : </b> {lplink}" + bp_link
                 ui = "┠"
         else:
             bp_link = f"\n┖ <b>Bypass Link:</b> {result}"
@@ -76,7 +74,7 @@ async def bypass_check(client, message):
         if is_excep_link(link):
             parse_data.append(f"{bp_link}\n\n━━━━━━━✦✗✦━━━━━━━\n\n")
         else:
-            parse_data.append(f'┎ <b>Source Link:</b> {link}{bp_link}\n\n━━━━━━━✦✗✦━━━━━━━\n\n')
+            parse_data.append(f'┎ <b>Source ➠Link : </b> {link}{bp_link}\n\n━━━━━━━✦✗✦━━━━━━━\n\n')
             
     end = time()
 
@@ -114,9 +112,9 @@ async def inline_query(client, query):
             end = time()
             
             if not is_excep_link(link):
-                bp_link = f"┎ <b>Source Link:</b> {link}\n┃\n┖ <b>Bypass Link:</b> {bp_link}"
+                bp_link = f"┎ <b>Source ➠Link : </b> {link}\n┃\n┖ <b>Bypass ➠Link : </b> {bp_link}"
             answers.append(InlineQueryResultArticle(
-                title="✅️ Bypass Link Success !",
+                title="Bypass Link Success 💞",
                 input_message_content=InputTextMessageContent(
                     f'{bp_link}\n\n✎﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏﹏\n\n🧭 <b>Took Only <code>{convert_time(end - start)}</code></b>',
                     disable_web_page_preview=True,
@@ -146,15 +144,15 @@ async def inline_query(client, query):
         answers.append(InlineQueryResultArticle(
                 title="♻️ Bypass Usage: In Line",
                 input_message_content=InputTextMessageContent(
-                    '''<b><i>FZ Bypass Bot!</i></b>
+                    '''<b><i>JS Bypass 💫</i></b>
     
-    <i>A Powerful Elegant Multi Threaded Bot written in Python... which can Bypass Various Shortener Links, Scrape links, and More ... </i>
+    <i>Iam Js Bypasser Shortener Links Scrape links Soon More..... </i>
     
 🎛 <b>Inline Use :</b> !bp [Single Link]''',
                 ),
                 description="Bypass via !bp [link]",
                 reply_markup=InlineKeyboardMarkup([
-                        [InlineKeyboardButton("FZ Channel", url="https://t.me/FXTorrentz"),
+                        [InlineKeyboardButton("Owner🔥", url="https://t.me/J_S_X_20"),
                         InlineKeyboardButton('Try Bypass', switch_inline_query_current_chat="!bp ")]
                 ])
             ))
